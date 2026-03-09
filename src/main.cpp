@@ -13,5 +13,9 @@ int main() {
 
     std::cout << "Average close: " << csv_handler.avg_close(data) << "\n";
 
+    auto ma10 = csv_handler.moving_average(data, 10);
+
+    std::cout << "MA10 at index 100: " << ma10[100] << "\n";
+
     return EXIT_SUCCESS;
 }

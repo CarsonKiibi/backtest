@@ -47,3 +47,22 @@ double CSV_Handler::avg_close(const std::vector<Candle>& data) {
 
     return sum / data.size();
 }
+
+std::vector<double> CSV_Handler::moving_average(const std::vector<Candle>& data, int window) {
+    std::vector<double> ma(data.size());
+    double sum = 0;
+
+    for (int i = 0; i < data.size(); i++) {
+        sum += data[i].close;
+
+        if (i >= window)
+            sum -= data[i - window].close;
+
+        if (i >= window - 1)
+            ma[i] = sum / window;
+        else 
+            ma[i] = 0;
+    }
+
+    return ma;
+}
