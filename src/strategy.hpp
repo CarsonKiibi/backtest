@@ -8,6 +8,6 @@ class Strategy {
     protected:
         Strategy() = default;
     public:
-        virtual ~Strategy() = 0;
-        virtual Signal generate_signal(int pos);
+        virtual ~Strategy() = default;
+        virtual Signal generate_signal(int index) = 0;
 };
