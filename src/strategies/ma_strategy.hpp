@@ -1,6 +1,6 @@
 #pragma once
 #include "strategy.hpp"
-#include "market_data.hpp"
+#include "../market_data.hpp"
 
 class MovingAverageStrategy : public Strategy {
     public:

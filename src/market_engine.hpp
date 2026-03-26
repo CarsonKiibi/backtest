@@ -1,6 +1,7 @@
 #pragma once
 #include "market_data.hpp"
-#include "strategy.hpp"
+#include "engine_config.hpp"
+#include "strategies/strategy.hpp"
 #include <vector>
 
 struct Trade {

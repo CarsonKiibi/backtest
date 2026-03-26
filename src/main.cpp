@@ -2,7 +2,7 @@
 #include <iostream>
 #include "data_handler.hpp"
 #include "market_data.hpp"
-#include "ma_strategy.hpp"
+#include "strategies/ma_strategy.hpp"
 #include "market_engine.hpp"
 
 int main() {
