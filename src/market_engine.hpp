@@ -1,6 +1,7 @@
 #pragma once
 #include "market_data.hpp"
 #include "strategy.hpp"
+#include <vector>
 
 struct Trade {
     std::string timestamp;
@@ -10,12 +11,11 @@ struct Trade {
 
 class MarketEngine {
 public:
-    explicit MarketEngine(const MarketData& data, Strategy& strategy) : data_(data), strategy(strategy) {};
-    virtual ~MarketEngine() = default;
+    MarketEngine(const MarketData& data, Strategy& strategy, const EngineConfig& config);
+    void run();
 
-    virtual void run() = 0;
-
-protected:
+private:
     const MarketData& data_;
-    Strategy& strategy;
+    Strategy& strategy_;
+    EngineConfig config_;
 };
